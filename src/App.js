@@ -7,9 +7,13 @@ import { TimeForm } from './components/Forms/TimeForm';
 
 const App = () => {
     const downloadCanvas = () => {
-        let canvas = document.querySelector('canvas');
-        let link = canvas.toDataURL('image/png');
-        console.log(link);
+        var resizedCanvas = document.createElement('canvas');
+        var resizedContext = resizedCanvas.getContext('2d');
+        resizedCanvas.height = '2436';
+        resizedCanvas.width = '1896';
+        resizedContext.drawImage(canvas, 0, 0, 1896, 2436);
+        var link = resizedCanvas.toDataURL();
+
         var aDownloadLink = document.createElement('a');
         aDownloadLink.download = 'canvas_image.png';
         aDownloadLink.href = link;
