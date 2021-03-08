@@ -7,6 +7,8 @@ import { TimeForm } from './components/Forms/TimeForm';
 
 const App = () => {
     const downloadCanvas = () => {
+        let canvas = document.querySelector('canvas');
+
         var resizedCanvas = document.createElement('canvas');
         var resizedContext = resizedCanvas.getContext('2d');
         resizedCanvas.height = '2436';
